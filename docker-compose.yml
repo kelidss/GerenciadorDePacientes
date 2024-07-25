@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  postgree_kompa:
+    container_name: postgree_kompa
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgree_kompa:/var/lib/postgresql/data
+    env_file:
+      - .env

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Pacientes</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="./assets/logo.png" alt="Logo Gestão de Pacientes" width="250" height="150">
+            </div>
+            <h1>Gestão de Pacientes</h1>
+        </header>
+        <main>
+
+            <section class="patients-list">
+                <h2>Listar Pacientes</h2>
+                <table id="patientsTable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Histórico médico</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="patient-form">
+                <h2>Criar Paciente</h2>
+                <form id="addPatientForm">
+                    <input type="text" id="name" placeholder="Nome" required>
+                    <input type="date" id="birth_date" placeholder="Data de Nascimento" required>
+                    <input type="text" id="address" placeholder="Endereço" required>
+                    <input type="text" id="phone" placeholder="Telefone" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <textarea id="medical_history" placeholder="Histórico médico" required></textarea>
+                    <input type="submit" value="Salvar Paciente">
+                </form>
+            </section>
+
+            <div id="editPatientModal" class="modal">
+                <div class="modal-content" id="modalEdit">
+                    <span class="close" id="closeEditPatientModal">&times;</span>
+                    <h2>Editar Paciente</h2>
+                    <form id="editPatientForm">
+                        <input type="text" id="name_edit" placeholder="Nome" required>
+                        <input type="date" id="birth_date_edit" placeholder="Data de Nascimento" required>
+                        <input type="text" id="address_edit" placeholder="Endereço" required>
+                        <input type="text" id="phone_edit" placeholder="Número" required>
+                        <input type="email" id="email_edit" placeholder="Email" required>
+                        <textarea id="medical_history_edit" placeholder="Descrição da Última Visita" required></textarea>
+                        <input type="submit" value="Salvar">
+                    </form>
+                </div>
+            </div>
+
+            <div id="VisitsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeVisitsModal">&times;</span>
+                    <h2>Visitas</h2>
+                    <table id="visitsTable">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <form id="addVisitForm">
+                        <input type="date" id="visit_date" required>
+                        <textarea id="visit_summary" placeholder="Descrição" required></textarea>
+                        <input type="hidden" id="patient_id">
+                        <button type="submit">Adicionar Visita</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
